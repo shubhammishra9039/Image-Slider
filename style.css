@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+}
+
+.slide {
+  display: none;
+}
+
+img {
+  height: 100vh;
+  width: 100%;
+}
+.btn {
+  font-size: 3em;
+  position: absolute;
+  top: 45%;
+  color: white;
+  padding: 1rem;
+}
+
+.btn:hover {
+  background-color: rgb(208, 202, 202);
+}
+
+#pre {
+  left: 2rem;
+}
+
+#next {
+  right: 2rem;
+}

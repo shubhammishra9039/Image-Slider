@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slide" style="display: block">
+        <img
+          src="https://images.pexels.com/photos/612891/pexels-photo-612891.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://images.pexels.com/photos/165537/pexels-photo-165537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://images.pexels.com/photos/1659689/pexels-photo-1659689.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt=""
+        />
+      </div>
+      <div class="btn" id="pre">></div>
+      <div class="btn" id="next"><</div>
+    </div>
+
+    <script>
+        let currentslide = 0;
+
+      let slides = document.querySelectorAll(".slide");
+      let prebtn = document.querySelector("#pre");
+      let nextbtn = document.querySelector("#next");
+
+      nextbtn.addEventListener("click", function () {
+        let nextslide = (currentslide + 1) % slides.length;
+        slides[currentslide].style.display = "none";
+        slides[nextslide].style.display = "block";
+        currentslide = nextslide;
+      });
+
+      prebtn.addEventListener ("click", function () {
+        let prevslide = (currentslide - 1 + slides.length) % slides.length;
+        slides[currentslide].style.display = "none";
+        slides[prevslide].style.display = "block";
+        currentslide = prevslide;
+    });
+    </script>
+  </body>
+</html>
